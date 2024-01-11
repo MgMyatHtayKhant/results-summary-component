@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Repository URL](https://github.com/MgMyatHtayKhant/results-summary-component)
-- Live Site URL: [Live site URL]()
+- Live Site URL: [Live site URL](https://glittery-raindrop-c6a2e0.netlify.app/)
 
 ## My process
 
