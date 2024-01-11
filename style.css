@@ -1,0 +1,252 @@
+:root {
+  /* Primary */
+  --LIGHT-RED: hsl(0, 100%, 67%);
+  --ORANGEY-YELLOW: hsl(39, 100%, 56%);
+  --GREEN-TEAL: hsl(166, 100%, 37%);
+  --COBALT-BLUE: hsl(234, 85%, 45%);
+
+  /* Gradients */
+  --LIGHT-SLATE-BLUE: hsl(252, 100%, 67%);
+  --LIGHT-ROYAL-BLUE: hsl(241, 81%, 54%);
+
+  --VIOLET-BLUE: hsla(256, 72%, 46%, 1);
+  --PERSIAN-BLUE: hsla(241, 72%, 46%, 0);
+
+  /* Neutral */
+  --WHITE: hsl(0, 0%, 100%);
+  --PALE-BLUE: hsl(221, 100%, 96%);
+  --LIGHT-LAVENDER: hsl(241, 100%, 89%);
+  --DARK-GRAY-BLUE: hsl(224, 30%, 27%);
+
+  /* Background Color */
+  --BG-REACTION: color-mix(in oklab, var(--LIGHT-RED) 10%, var(--WHITE) 90%);
+  --BG-MEMORY: color-mix(in oklab, var(--ORANGEY-YELLOW) 10%, var(--WHITE) 90%);
+  --BG-VERBAL: color-mix(in oklab, var(--GREEN-TEAL) 10%, var(--WHITE) 90%);
+  --BG-VISUAL: color-mix(in oklab, var(--COBALT-BLUE) 10%, var(--WHITE) 90%);
+
+  /* Background Image */
+  --BG-IMG: linear-gradient(
+    to bottom,
+    var(--LIGHT-SLATE-BLUE),
+    var(--LIGHT-ROYAL-BLUE)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "HankenGrotesk";
+  src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+}
+
+body {
+  font-family: "HankenGrotesk", sans-serif;
+  font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* main container */
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  box-shadow: 0 0.5rem 1rem 0.5rem var(--BG-VISUAL);
+  border-radius: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 345px));
+}
+
+/* Result Section */
+
+.container .result {
+  border-radius: 2rem;
+  color: var(--WHITE);
+  text-align: center;
+  padding: 2rem 2.5rem 2.5rem;
+  background-image: var(--BG-IMG);
+}
+
+.result h1 {
+  margin-bottom: 2rem;
+}
+
+.result .circle {
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 9rem;
+  height: 9rem;
+  border-radius: calc(9rem / 2);
+  background-image: linear-gradient(
+    to bottom,
+    var(--VIOLET-BLUE),
+    var(--PERSIAN-BLUE)
+  );
+  margin-bottom: 1.5rem;
+}
+
+.circle .result-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.result .grade {
+  margin-bottom: 1rem;
+}
+
+.result h1,
+.result .circle .result-total,
+.result .description {
+  opacity: 0.6;
+}
+
+/* Summary Section */
+
+.container .summary {
+  padding: 2rem 2.5rem 2.5rem;
+}
+
+.summary h1 {
+  margin-bottom: 1.5rem;
+}
+
+.summary .btn {
+  display: block;
+  color: var(--WHITE);
+  font-weight: 500;
+  background-color: var(--DARK-GRAY-BLUE);
+  cursor: pointer;
+  width: 100%;
+  padding-block: 13px;
+  border: none;
+  border-radius: 1.5rem;
+}
+
+.summary .btn:hover {
+  background-image: var(--BG-IMG);
+}
+
+.summary .data-container {
+  margin-bottom: 2rem;
+}
+
+.summary .data-container .item {
+  display: flex;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+
+.item .icon {
+  margin-right: 10px;
+}
+
+.item .category {
+  flex: 1;
+  font-weight: 700;
+}
+
+.item .score {
+  font-weight: 800;
+}
+
+.item .score-total {
+  opacity: 0.3;
+}
+
+.data-container li:nth-child(-n + 3) {
+  margin-bottom: 1rem;
+}
+
+/* Color Reaction */
+.data-container li.reaction {
+  background-color: var(--BG-REACTION);
+}
+
+.data-container li.reaction .category {
+  color: var(--LIGHT-RED);
+}
+
+/* Color Memory */
+.data-container li.memory {
+  background-color: var(--BG-MEMORY);
+}
+
+.data-container li.memory .category {
+  color: var(--ORANGEY-YELLOW);
+}
+
+/* Color Verbal */
+.data-container li.verbal {
+  background-color: var(--BG-VERBAL);
+}
+
+.data-container li.verbal .category {
+  color: var(--GREEN-TEAL);
+}
+
+/* Color Visual */
+.data-container li.visual {
+  background-color: var(--BG-VISUAL);
+}
+
+.data-container li.visual .category {
+  color: var(--COBALT-BLUE);
+}
+
+/* Footer */
+.attribution {
+  padding: 1rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: minmax(100px, 345px);
+    box-shadow: 0 0 1rem 0.5rem var(--BG-VISUAL);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .container .result {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 1rem 1.5rem 2rem;
+  }
+
+  .result h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .result .grade {
+    margin-bottom: 0.5rem;
+  }
+
+  .container .summary {
+    padding: 1.5rem;
+  }
+
+  .summary h1 {
+    text-align: center;
+  }
+}
