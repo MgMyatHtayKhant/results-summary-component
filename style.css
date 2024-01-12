@@ -128,7 +128,7 @@ main {
   padding: 2rem 2.5rem 2.5rem;
 }
 
-.summary h1 {
+.summary h2 {
   margin-bottom: 1.5rem;
 }
 
@@ -249,7 +249,7 @@ main {
     padding: 1.5rem;
   }
 
-  .summary h1 {
+  .summary h2 {
     text-align: center;
   }
 }
